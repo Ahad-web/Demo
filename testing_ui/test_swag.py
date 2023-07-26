@@ -2,9 +2,9 @@ from playwright.sync_api import Playwright
 from pom.login_test_cases import Swag
 
 
-def test_swag_lab(playwright: Playwright):
-    browser = playwright.chromium.launch(headless=True, slow_mo=500)
-    page = browser.new_page()
+def test_swag_lab(page: Playwright):
+    # browser = playwright.chromium.launch(headless=False, slow_mo=500)
+    # page = browser.new_page()
     sw = Swag(page)
     sw.navigate()
     sw.login()
